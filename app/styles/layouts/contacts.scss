@@ -3,7 +3,7 @@
   float: left;
   height: 100vh;
   width: $contact-width;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease-out;
   overflow: hidden;
 
   @media(max-width: $screen-sm-max) {
@@ -11,10 +11,11 @@
   }
 
   @media(max-width: $screen-xs-max) {
-    border-right: 3px solid #E4E4E4;
+    border-right: 15px solid transparent;
     width: 0;
 
     &:hover {
+      border-right: 5px;
       width: $contact-width / 3;
     }
   }
