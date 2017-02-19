@@ -1,0 +1,58 @@
+$gutterless-grid: (gutter: 0);
+
+#contacts {
+  background: #F4F4F4;
+  float: left;
+  height: 100vh;
+  width: $contact-width;
+  transition: width 0.2s ease;
+  overflow: hidden;
+
+  @media(max-width: $screen-sm-max) {
+    width: $contact-width / 3;
+  }
+}
+
+.contact-list {
+  max-height: 100%;
+  overflow: auto;
+}
+
+.contact {
+  @include grid-container;
+
+  border-bottom: 1px solid #E4E4E4;
+  float: left;
+  height: 86px;
+  width: $contact-width;
+
+  .contact-thumbnail {
+    @include grid-column(4);
+
+    text-align: center;
+    margin-left: 0;
+    width: calc(100% / 3);
+
+    img {
+      border-radius: 50%;
+      margin-top: 3px;
+      max-height: 5em;
+      padding: 5px;
+    }
+  }
+
+  .contact-content {
+    @include grid-column(8);
+
+    margin-left: 0;
+    width: calc(100% / 3 * 2);
+
+    h3 {
+      margin: 10px 0 5px 0;
+    }
+
+    p {
+      font-size: 0.7em;
+    }
+  }
+}
