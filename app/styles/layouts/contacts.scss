@@ -1,21 +1,29 @@
-$gutterless-grid: (gutter: 0);
-
 #contacts {
   background: #F4F4F4;
   float: left;
   height: 100vh;
   width: $contact-width;
-  transition: width 0.2s ease;
+  transition: all 0.2s ease;
   overflow: hidden;
 
   @media(max-width: $screen-sm-max) {
     width: $contact-width / 3;
   }
+
+  @media(max-width: $screen-xs-max) {
+    border-right: 3px solid #E4E4E4;
+    width: 0;
+
+    &:hover {
+      width: $contact-width / 3;
+    }
+  }
 }
 
 .contact-list {
   max-height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .contact {
@@ -25,6 +33,10 @@ $gutterless-grid: (gutter: 0);
   float: left;
   height: 86px;
   width: $contact-width;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   .contact-thumbnail {
     @include grid-column(4);
